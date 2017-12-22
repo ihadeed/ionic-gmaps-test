@@ -5,11 +5,11 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-import {SecondPage} from "../pages/second/second"
+import { SecondPage } from '../pages/second/second';
 
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { GoogleMaps } from "@ionic-native/google-maps";
+import { GoogleMaps } from '@ionic-native/google-maps/ngx';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,7 @@ import { GoogleMaps } from "@ionic-native/google-maps";
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp, {
-      pageTransition: "md-transition"
+      pageTransition: 'md-transition'
     })
   ],
   bootstrap: [IonicApp],
@@ -35,7 +35,8 @@ import { GoogleMaps } from "@ionic-native/google-maps";
     GoogleMaps,
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule {
+}
