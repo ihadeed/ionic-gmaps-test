@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { AfterViewInit, Component, OnDestroy } from '@angular/core';
+import { NavController, Platform } from 'ionic-angular';
 import {
   GoogleMaps,
   GoogleMap,
@@ -20,17 +20,17 @@ const CAMERA_DEFAULT_ZOOMLEVEL = 13;
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HomePage {
+export class HomePage implements AfterViewInit {
 
   mapReady: boolean = false;
   map: GoogleMap;
 
 
-  constructor(public navCtrl: NavController) {
-  }
+  constructor(private navCtrl: NavController,
+              private platform: Platform) {}
 
-  ionViewDidLoad() {
-    console.log('HomePage: ionViewDidLoad');
+  async ngAfterViewInit() {
+    await this.platform.ready();
     this.loadMap();
   }
 
@@ -86,8 +86,7 @@ export class HomePage {
   }
 
   openSecondPage() {
-    console.log('HomePage: openSecondPage()');
     this.navCtrl.push(SecondPage);
   }
 
-  }
+}
