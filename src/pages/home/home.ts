@@ -7,7 +7,7 @@ import {
   Marker,
   GoogleMapsAnimation,
   MyLocation
-} from '@ionic-native/google-maps';
+} from '@ionic-native/google-maps/ngx';
 
 import {SecondPage} from "../second/second";
 

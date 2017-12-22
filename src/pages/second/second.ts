@@ -7,7 +7,7 @@ import {
   Marker,
   GoogleMapsAnimation,
   MyLocation
-} from '@ionic-native/google-maps';
+} from '@ionic-native/google-maps/ngx';
 
 const CAMERA_DEFAULT_LAT = 40.771133;
 const CAMERA_DEFAULT_LONG = -73.974187;
